@@ -14,6 +14,16 @@ int main(int argc, char **argv)
 
 	printf("Hello from process %i\n", rank);
 
+	int n = 0;
+
+	if(rank == 0) {
+		printf("Enter a positive integer: ");
+		fflush(stdout);
+		scanf("%i", &n);
+	}
+
+	printf("n = %i", n);
+    fflush(stdout);
 
 	MPI_Finalize();
 
